@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TasteBuds Restaurant</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fefefe;
+        }
+
+        header,
+        footer {
+            background-color: #d35400;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #f39c12;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #e67e22;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f9e79f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to TasteBuds Restaurant</h1>
+        <p><em>Delicious flavors from around the world!</em></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Reservations</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Two-column layout using frames (old method, modern sites use CSS grid/flex) -->
+    <iframe src="menu.html" name="menuFrame" width="40%" height="300" style="border:1px solid gray;"></iframe>
+    <iframe src="offers.html" name="offerFrame" width="59%" height="300" style="border:1px solid gray;"></iframe>
+
+    <!-- About Section with Inline CSS -->
+    <section style="padding: 20px;">
+        <h2>About Us</h2>
+        <p style="color:#555;">TasteBuds has served authentic dishes since 2005. Our chefs bring inspiration from across
+            the globe to your plate.</p>
+    </section>
+
+    <!-- Menu Table -->
+    <section>
+        <h2>Popular Dishes</h2>
+        <table>
+            <tr>
+                <th>Dish</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Spaghetti Carbonara</td>
+                <td>Creamy pasta with pancetta and parmesan</td>
+                <td>$12</td>
+            </tr>
+            <tr>
+                <td>Chicken Biryani</td>
+                <td>Fragrant basmati rice with spiced chicken</td>
+                <td>$10</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Image and Link -->
+    <section style="padding: 20px;">
+        <h2>Explore Our Gallery</h2>
+        <a href="images/gallery.jpg" target="_blank">
+            <img src="images/dining.jpg" alt="Our Dining Space" width="400" height="250">
+        </a>
+    </section>
+
+    <!-- List Section -->
+    <section>
+        <h2>We Offer:</h2>
+        <ul>
+            <li>Dine-in</li>
+            <li>Takeaway</li>
+            <li>Online Ordering</li>
+            <li>Weekend Buffets</li>
+        </ul>
+    </section>
+
+    <!-- Contact Form -->
+    <section style="padding: 20px;">
+        <h2>Make a Reservation</h2>
+        <form>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="guests">Number of Guests:</label><br>
+            <input type="number" id="guests" name="guests" min="1" max="10"><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+            <input type="submit" value="Book Now">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TasteBuds Restaurant | Designed with love &hearts;</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Example</title>
+    <meta name="owner" content="Tirthraj Mahajan">
+    <meta name="roll_no" content="31242">
+</head>
+<body>
+
+    <form method="post">
+        <fieldset>
+            <legend>Academic information</legend>
+            <label for="degree">Degree</label>
+            <select name="degree">
+                <option value="MBA" selected>Masters in Business Administration</option>
+                <option value="MS">Master of Science</option>
+                <option value="PHD">PHD</option>
+                <option value="BE">Bachelors in Engineering</option>
+            </select>
+            <br><br>
+            <label for="studentID">Student ID</label>
+            <input type="text" name="studentID">
+            <br><br>
+            <label for="attendedClasses">Classes attended</label>
+            <select name="attendedClasses" multiple size="3">
+                <option value="geography">Geography</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="english">English</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName">
+            <br>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName">
+            <div>
+                Gender
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" checked>
+                <label for="female">Female</label>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" name="email">
+        </fieldset>
+        <br>
+        <textarea rows="5" cols="50">TERMS AND CONDITIONS...</textarea>
+        <br>
+
+        <button type="submit">Send Form</button>
+        <button type="reset">Clear Form</button>
+    </form>
+</body>
+</html>

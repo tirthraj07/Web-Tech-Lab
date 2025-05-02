@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+}
+
+input,
+textarea {
+    width: 300px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35400;
+}
