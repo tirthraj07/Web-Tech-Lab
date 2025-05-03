@@ -69,4 +69,6 @@ In your pom.xml, add the MySQL JDBC driver
 mvn jetty:run
 ```
 
-You should now see `http://localhost:8080/hello` with **Hello from Servlet!**
+You should now see `http://localhost:8080/`
+
+![](output.png) 
