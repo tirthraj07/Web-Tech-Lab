@@ -1,0 +1,11 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         version="5.0">
+    <servlet>
+        <servlet-name>DisplayBooksServlet</servlet-name>
+        <servlet-class>com.main.DisplayBooksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayBooksServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
