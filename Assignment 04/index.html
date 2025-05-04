@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>HTML Form Validation</h1>
+    
+    <form id="myForm">
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+            <br><br>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+            <br><br>
+
+            <label for="gender">Gender</label>
+            <br>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <br><br>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">SELECT COUNTRY</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+            </select>
+            <br><br>
+            <input type="checkbox" id="subscribe"> Agree to terms<br>
+            <br><br>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

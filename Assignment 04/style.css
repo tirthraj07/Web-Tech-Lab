@@ -1,0 +1,19 @@
+* {
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    border: 1px solid black;
+    padding: 10px;
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+
+        <h1>Hello <span ng-bind="name"></span>! How are you?</h1>
+
+    </div>
+
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myController", function($scope){
+            $scope.name = "Tirthraj";
+        })
+    </script>
+
+
+</body>
+</html>
