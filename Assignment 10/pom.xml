@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>ejb-bank-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>ejb-bank-app</name>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <version.wildfly.maven.plugin>7.0.0.Final</version.wildfly.maven.plugin>
+        <version.wildfly.bom>26.1.2.Final</version.wildfly.bom>
+    </properties>
+
+    <dependencies>
+        <!-- EJB API -->
+        <dependency>
+            <groupId>jakarta.ejb</groupId>
+            <artifactId>jakarta.ejb-api</artifactId>
+            <version>3.2.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Servlet API (javax.servlet) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- WildFly EJB Client (optional) -->
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-ejb-client-bom</artifactId>
+            <version>${version.wildfly.bom}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- WildFly Bootable JAR Plugin -->
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-jar-maven-plugin</artifactId>
+                <version>${version.wildfly.maven.plugin}</version>
+                <configuration>
+                    <feature-packs>
+                        <feature-pack>
+                            <location>wildfly@maven(org.jboss.universe:community-universe)#${version.wildfly.bom}</location>
+                        </feature-pack>
+                    </feature-packs>
+                    <layers>
+                        <layer>jaxrs</layer>
+                        <layer>ejb</layer>
+                        <layer>servlet</layer> <!-- Add servlet layer -->
+                    </layers>
+                    <packages>
+                        <package>org.wildfly.ee</package>
+                    </packages>
+                    <bootable>true</bootable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-jakartaee8-with-tools</artifactId>
+                <version>${version.wildfly.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
