@@ -1,6 +1,7 @@
 package com.main;
 
-import javax.ejb.Remote;
+
+import jakarta.ejb.Remote;
 
 @Remote
 public interface AccountBeanRemote {

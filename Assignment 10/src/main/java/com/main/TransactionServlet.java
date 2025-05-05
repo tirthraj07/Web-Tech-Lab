@@ -1,20 +1,33 @@
 package com.main;
 
-import java.io.IOException;
-import javax.ejb.EJB;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import jakarta.ejb.EJB;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/transaction")
+import java.io.IOException;
+
 public class TransactionServlet extends HttpServlet {
 
     @EJB
     AccountBeanRemote accountBean;
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.getWriter().println("<h2>Servlet is working!</h2>");
+        response.getWriter().println("<p>Current balance: $" + accountBean.getBalance() + "</p>");
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         double amount = Double.parseDouble(request.getParameter("amount"));
+
+        if (accountBean == null) {
+            response.getWriter().println("<h2>Error: EJB not injected!</h2>");
+            return;
+        }
 
         try {
             if ("deposit".equals(action)) {

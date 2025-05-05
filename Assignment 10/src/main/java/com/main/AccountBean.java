@@ -1,6 +1,7 @@
 package com.main;
 
-import javax.ejb.Stateless;
+
+import jakarta.ejb.Stateless;
 
 @Stateless
 public class AccountBean implements AccountBeanRemote {
